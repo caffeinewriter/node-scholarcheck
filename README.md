@@ -1,8 +1,8 @@
 # node-scholarcheck
-Node API wrapper for ScholarCheck.io
+Node API wrapper for [ScholarCheck.io](http://www.scholarcheck.io/). This module requires a ScholarCheck API Token to function.
 
 ##Documentation
------
+
 ###Setup
 ```javascript
 var Scholarcheck = require('scholarcheck');
