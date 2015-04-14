@@ -28,4 +28,4 @@ Returns the passed callback function with `err` as `null` if the query was suces
 Returns the passed callback function with `err` as `null` if the query was sucessful, and a string containing the name of the institution as `institution`, or `err` as the returned error if the check was unsuccessful.
 
 ### `ScholarCheck.rawData(email, cb(err, data))`
-Returns the passed callback function with `err` as `null` if the query was sucessful, and an object containing the properties `valid` as a boolean, and `data` as an object, or `err` as the returned error if the check was unsuccessful.
+Returns the passed callback function with `err` as `null` if the query was sucessful, and an object containing the properties `valid` as a boolean, and `institutionName` as a string, or `err` as the returned error if the check was unsuccessful.
