@@ -23,7 +23,7 @@
     "request": "~2.55.0"
   },
   "devDependencies": {
-    "chai": "^2.2.0"
+    "chai": "~2.2.0"
   },
   "scripts": {
     "test": "mocha test/index.js"
