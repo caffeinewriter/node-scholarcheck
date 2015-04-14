@@ -11,51 +11,63 @@ describe('Scholarcheck', function() {
   it('should be an instance of Scholarcheck', function() {
     expect(s).to.be.an.instanceOf(Scholarcheck);
   });
+  it('should have an API key loaded', function() {
+    expect(s.apiKey).to.be.ok;
+  });
   describe('#_apiCall()', function() {
-    it('should return raw API data from endpoint', function() {
+    it('should return raw API data from endpoint', function(done) {
       s._apiCall('email/flastname@mit.edu', function(err, data) {
-        expect(data).to.be.an('object').with.keys(['valid', 'institution']);
+        if (err) return done(err);
+        expect(data).to.be.an('object').with.keys(['valid', 'institutionName']);
+        done();
       });
     });
   });
   describe('#verify()', function() {
-    it('should return true on academic emails', function() {
+    it('should return true on academic emails', function(done) {
       s.valid('m.e.jager@uva.nl', function (err, valid) {
+        if (err) return done(err);
         expect(valid).to.be.true;
-      });
-      s.valid('jdubois@upmc.fr', function (err, valid) {
-        expect(valid).to.be.true;
-      });
-      s.valid('b.anzaldi3203@student.sbccd.edu', function (err, valid) {
-        expect(valid).to.be.true;
+        s.valid('jjohnson@wisc.edu', function (err, valid) {
+          if (err) return done(err);
+          expect(valid).to.be.true;
+          done();
+        });
       });
     });
-    it('should return false on non-academic emails', function() {
+    it('should return false on non-academic emails', function(done) {
       s.valid('brandon@brandonanzaldi.com', function (err, valid) {
+        if (err) return done(err);
         expect(valid).to.be.false;
-      });
-      s.valid('someemail@gmail.com', function (err, valid) {
-        expect(valid).to.be.false;
-      });
-      s.valid('anotheremail@yahoo.com', function (err, valid) {
-        expect(valid).to.be.false;
+        s.valid('fakeemail@gmail.com', function (err, valid) {
+          if (err) return done(err);
+          expect(valid).to.be.false;
+          done();
+        });
       });
     });
   });
   describe('#institution()', function() {
-    it('should return the institution name', function () {
+    it('should return the institution name', function (done) {
       s.institution('ei12038@fe.up.pt', function (err, institution) {
+        if (err) return done(err);
         expect(institution).to.equal('Universidade do Porto');
-      });
-      s.institution('flastname@mit.edu', function (err, institution) {
-        expect(institution).to.equal('Massachusetts Institute of Technology');
+        s.institution('testemail@mit.edu', function (err, institution) {
+          if (err) return done(err);
+          expect(institution).to.equal('Massachusetts Institute of Technology');
+          done();
+        });
       });
     });
   });
   describe('#rawdata()', function() {
-    it('should return the raw API data', function() {
+    it('should return the raw API data', function(done) {
       s.rawData('flastname@mit.edu', function(err, data) {
-        expect(data).to.be.an('object').with.keys(['valid', 'institution']);
+        if (err) return done(err);
+        expect(data).to.be.an('object').with.keys(['valid', 'institutionName']);
+        expect(data.valid).to.be.true;
+        expect(data.institutionName).to.equal('Massachusetts Institute of Technology');
+        done();
       });
     });
   });
