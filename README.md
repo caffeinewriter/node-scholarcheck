@@ -1,19 +1,31 @@
 # node-scholarcheck
 Node API wrapper for [ScholarCheck.io](http://www.scholarcheck.io/). This module requires a ScholarCheck API Token to function.
 
-##Documentation
+[![](https://img.shields.io/npm/v/scholarcheck.svg)](https://www.npmjs.com/package/scholarcheck)
 
-###Setup
+## Documentation
+
+### Setup
 ```javascript
-var Scholarcheck = require('scholarcheck');
-var scholarcheck = new Scholarcheck('API_TOKEN');
+var ScholarCheck = require('scholarcheck');
+var scholarcheck = new ScholarCheck('API_TOKEN');
+
+scholarcheck.valid('ap25@cam.ac.uk', function (err, valid) {
+  console.log(valid); //true
+});
+scholarcheck.valid('ei12038@fe.up.pt', function (err, valid) {
+  console.log(valid); //true
+});
+scholarcheck.institution('ei12038@fe.up.pt', function (err, institution) {
+  console.log(institution);  //"Universidade do Porto"
+});
 ```
 
-###`Scholarcheck.valid(email)`
-Returns `true` if `email` is a valid institutional email, `false` if it's not, or `undefined` on error.
+### `ScholarCheck.valid(email, cb(err, valid))`
+Returns the passed callback function with `err` as `null` if the query was sucessful, and a boolean representation of if `email` is a valid institutional email, or `err` as the returned error if the check was unsuccessful.
 
-###`Scholarcheck.institution(email)`
-Returns the institution's name as a string if `email` is a valid institutional email, an empty string if it's not a valid institutional email, or `undefined` on error.
+### `ScholarCheck.institution(email, cb(err, institution))`
+Returns the passed callback function with `err` as `null` if the query was sucessful, and a string containing the name of the institution as `institution`, or `err` as the returned error if the check was unsuccessful.
 
-###`Scholarcheck.rawData(email)`
-Returns the raw data object with `valid` and `institution` as keys. It will return with `err: true` as a key, as well as `valid` and `institution` set to `undefined` if there is an error.
+### `ScholarCheck.rawData(email, cb(err, data))`
+Returns the passed callback function with `err` as `null` if the query was sucessful, and an object containing the properties `valid` as a boolean, and `data` as an object, or `err` as the returned error if the check was unsuccessful.
