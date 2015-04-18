@@ -1,7 +1,7 @@
 # node-scholarcheck
 Node API wrapper for [ScholarCheck.io](http://www.scholarcheck.io/). This module requires a ScholarCheck API Token to function.
 
-[![](https://img.shields.io/npm/v/scholarcheck.svg)](https://www.npmjs.com/package/scholarcheck) [![](https://img.shields.io/circleci/project/caffeinewriter/node-scholarcheck.svg)](https://circleci.com/gh/caffeinewriter/node-scholarcheck) [![](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/caffeinewriter/node-scholarcheck) [![](https://img.shields.io/npm/l/scholarcheck.svg)](https://www.npmjs.com/package/scholarcheck)
+[![NPM Version](https://img.shields.io/npm/v/scholarcheck.svg)](https://www.npmjs.com/package/scholarcheck) [![CircleCI Status](https://img.shields.io/circleci/project/caffeinewriter/node-scholarcheck.svg)](https://circleci.com/gh/caffeinewriter/node-scholarcheck) [![CodeClimate](https://img.shields.io/codeclimate/github/kabisaict/flow.svg)](https://codeclimate.com/github/caffeinewriter/node-scholarcheck) [![License: MIT](https://img.shields.io/npm/l/scholarcheck.svg)](https://www.npmjs.com/package/scholarcheck) [![Dependency Status](https://david-dm.org/caffeinewriter/node-scholarcheck.svg)](https://david-dm.org/caffeinewriter/node-scholarcheck) [![devDependency Status](https://david-dm.org/caffeinewriter/node-scholarcheck/dev-status.svg)](https://david-dm.org/caffeinewriter/node-scholarcheck#info=devDependencies)
 
 ## Documentation
 
