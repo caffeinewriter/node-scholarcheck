@@ -27,3 +27,5 @@ build/Release
 node_modules
 #Ignoring manual test file
 mantest.js
+#Ignore IntelliJ files
+.idea/*
