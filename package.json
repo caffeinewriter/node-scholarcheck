@@ -1,6 +1,6 @@
 {
   "name": "scholarcheck",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "API wrapper for Scholarcheck.io",
   "keywords": [
     "scholarcheck",
