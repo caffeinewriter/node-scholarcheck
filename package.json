@@ -20,10 +20,10 @@
     "url": "https://github.com/caffeinewriter/node-scholarcheck.git"
   },
   "dependencies": {
-    "request": "~2.55.0"
+    "request": "~2.58.0"
   },
   "devDependencies": {
-    "chai": "~2.3.0"
+    "chai": "~3.0.0"
   },
   "scripts": {
     "test": "mocha test/index.js"
